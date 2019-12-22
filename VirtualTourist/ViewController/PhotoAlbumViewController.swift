@@ -73,7 +73,6 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     
     @IBAction func buttomButtonTapped(_ sender: Any) {
         updateUI(processing: true)
-        
         if doWeHavePhotos {
             isDeletingEverything = true
             for photo in fetchedResultsController.fetchedObjects! {
@@ -95,7 +94,7 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
                 }
                 
                 guard let urls = urls, !urls.isEmpty else {
-                    self.label.isHidden = false
+                    self.label.text = "This pin has no images"
                     return
                 }
                 

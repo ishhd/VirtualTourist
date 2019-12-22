@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="816" width="414" height="46"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="inP-vO-2N1"/>
-                                    <barButtonItem title="New Collection" id="W1t-RQ-3Mg">
+                                    <barButtonItem id="W1t-RQ-3Mg">
                                         <connections>
                                             <action selector="buttomButtonTapped:" destination="IRy-RZ-rU7" id="nHN-9Y-u6U"/>
                                         </connections>
@@ -125,7 +125,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This pin has no images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqN-na-43W" userLabel="noImages">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqN-na-43W" userLabel="noImages">
                                 <rect key="frame" x="0.0" y="85" width="414" height="726"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
