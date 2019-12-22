@@ -15,6 +15,7 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
     
     @IBOutlet weak var mapView: MKMapView!
     
+    
     var fetchedResultsController: NSFetchedResultsController<Pin>!
     var context: NSManagedObjectContext {
         return DataController.sharedInstance.viewContext
@@ -23,6 +24,7 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupFetchedResultsController()
+        mapView.delegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,17 +77,14 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
         }
     }
     
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let pin = fetchedResultsController.fetchedObjects?.filter {
             $0.compare(to: view.annotation!.coordinate)
             }.first!
-        performSegue(withIdentifier: "Show", sender: pin)
+        self.performSegue(withIdentifier: "Show", sender: pin)
     }
     
-    
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
         updateMapView()
     }
     

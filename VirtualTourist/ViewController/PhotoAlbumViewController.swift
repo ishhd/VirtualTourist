@@ -20,13 +20,14 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var mapView: MKMapView!
     
     var dataController : DataController!
+    
     var fetchedResultsController: NSFetchedResultsController<Photo>!
     var pin: Pin!
     var pageNumber = 1
     var isDeletingEverything = false
-    var coordinate: CLLocationCoordinate2D!
+    
     var context: NSManagedObjectContext {
-        return dataController.viewContext
+        return DataController.sharedInstance.viewContext
     }
     
     var doWeHavePhotos: Bool {
@@ -36,7 +37,8 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupFetchedResultsController()
-        Location(coordinate: coordinate)
+        self.activityIndicator.stopAnimating()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -180,16 +182,16 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    func Location(coordinate: CLLocationCoordinate2D){
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        let mapRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        DispatchQueue.main.async {
-            self.mapView.addAnnotation(annotation)
-            self.mapView.setRegion(mapRegion, animated: true)
-            self.mapView.regionThatFits(mapRegion)
-        }
-    }
+//    func Location(coordinate: CLLocationCoordinate2D){
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = coordinate
+//        let mapRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//        DispatchQueue.main.async {
+//            self.mapView.addAnnotation(annotation)
+//            self.mapView.setRegion(mapRegion, animated: true)
+//            self.mapView.regionThatFits(mapRegion)
+//        }
+//    }
     
 }
 
