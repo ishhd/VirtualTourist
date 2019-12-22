@@ -13,14 +13,11 @@ import CoreData
 
 class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NSFetchedResultsControllerDelegate{
     
-    var dataController : DataController!
-    
     @IBOutlet weak var mapView: MKMapView!
     
     var fetchedResultsController: NSFetchedResultsController<Pin>!
-    
     var context: NSManagedObjectContext {
-        return dataController.viewContext
+        return DataController.sharedInstance.viewContext
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +48,7 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
         }
     }
     
-    @IBAction func handleLongPeess(_ sender: UILongPressGestureRecognizer) {
+    @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state != .began { return }
         let touchPoint = sender.location(in: mapView)
         
@@ -72,7 +69,7 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowPhotos" {
+        if segue.identifier == "Show" {
             let photosVC = segue.destination as! PhotoAlbumViewContoller
             photosVC.pin = sender as? Pin
         }
@@ -83,7 +80,7 @@ class TravelLocationsMapViewController : UIViewController, MKMapViewDelegate, NS
         let pin = fetchedResultsController.fetchedObjects?.filter {
             $0.compare(to: view.annotation!.coordinate)
             }.first!
-        performSegue(withIdentifier: "ShowPhotos", sender: pin)
+        performSegue(withIdentifier: "Show", sender: pin)
     }
     
     

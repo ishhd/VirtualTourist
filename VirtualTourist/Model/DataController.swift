@@ -13,6 +13,7 @@ import CoreData
 class DataController {
     
     let persistentContainer:NSPersistentContainer
+    static let sharedInstance = DataController(modelName: "Model")
     
     var viewContext:NSManagedObjectContext {
         return persistentContainer.viewContext
