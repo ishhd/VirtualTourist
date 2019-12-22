@@ -43,11 +43,6 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        fetchedResultsController = nil
-    }
-    
     func setupFetchedResultsController() {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -112,14 +107,9 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     
     func updateUI(processing: Bool) {
         collectionView.isUserInteractionEnabled = !processing
-        if processing {
-            button.title = ""
-            activityIndicator.startAnimating()
-            
-        } else {
-            activityIndicator.stopAnimating()
-            button.title = "New Collection"
-        }
+        
+        processing ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+        button.title = processing ? "" : "New Collection"
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -182,18 +172,6 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
             collectionView.reloadData()
         }
     }
-    
-//    func Location(coordinate: CLLocationCoordinate2D){
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = coordinate
-//        let mapRegion = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-//        DispatchQueue.main.async {
-//            self.mapView.addAnnotation(annotation)
-//            self.mapView.setRegion(mapRegion, animated: true)
-//            self.mapView.regionThatFits(mapRegion)
-//        }
-//    }
-    
 }
 
 
