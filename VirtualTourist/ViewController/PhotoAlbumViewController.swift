@@ -38,6 +38,8 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
         super.viewWillAppear(animated)
         setupFetchedResultsController()
         self.activityIndicator.stopAnimating()
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
     }
     
