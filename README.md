@@ -1,5 +1,5 @@
 #  Virtual Tourist
-This is an Udacity project allows you to add pins , then you can see what other people have downloaded in this specfic location
+This is a Udacity project allows you to add pins , then you can see what other people have downloaded in this specfic location
 
 
 ## Overview 
