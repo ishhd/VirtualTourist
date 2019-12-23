@@ -24,9 +24,9 @@ This app uses the Flickr API to get photos associated to a specific location
 ### There are two views :
 #### First one is the map view to add pins
 
-![](img/firstView.pngs=200))
+![](img/firstView.png&s=200)
 
 #### Second one is the photos view to display images 
 
-![](img/secondView.pngs=200))
+![](img/secondView.png&s=200)
 
