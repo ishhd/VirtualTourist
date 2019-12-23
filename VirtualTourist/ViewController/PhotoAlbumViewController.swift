@@ -19,6 +19,7 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var button: UIBarButtonItem!
     @IBOutlet weak var mapView: MKMapView!
     
+    
     var dataController : DataController!
     
     var fetchedResultsController: NSFetchedResultsController<Photo>!
@@ -37,9 +38,9 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupFetchedResultsController()
-        self.activityIndicator.stopAnimating()
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        activityIndicator.stopAnimating()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
     }
     
@@ -173,6 +174,9 @@ class PhotoAlbumViewContoller : UIViewController, UICollectionViewDataSource, UI
         }
     }
 }
+
+
+    
 
 
 

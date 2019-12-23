@@ -63,6 +63,7 @@
 		4826BA9923ABCD68004524F3 /* TravelLocationsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLocationsMapViewController.swift; sourceTree = "<group>"; };
 		4826BA9B23ABCD81004524F3 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		4826BA9E23ABCE66004524F3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		482B7D7B23B0C67C00B659B0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 				4826BA8F23ABCCB1004524F3 /* API.swift */,
 				4826BA9123ABCCD9004524F3 /* Constant.swift */,
 				4826BA9323ABCCF5004524F3 /* Extension.swift */,
+				482B7D7B23B0C67C00B659B0 /* README.md */,
 				4826BAA023ABCFF9004524F3 /* Model */,
 				4826BAA123ABD014004524F3 /* ViewController */,
 				4826BA6023ABCC27004524F3 /* Main.storyboard */,
